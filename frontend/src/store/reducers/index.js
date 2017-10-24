@@ -1,6 +1,11 @@
 import * as actionType from '../actionTypes'
 
-export default function Readable(state= {}, action) {
+const initialState = {
+  categories: [],
+  posts: []
+}
+
+export default function Readable(state= initialState, action) {
   switch(action.type){
     case actionType.GET_CATEGORIES:
       return ({
