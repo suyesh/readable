@@ -1,12 +1,14 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 class Posts extends React.Component {
   render(){
     return(
-      <div className="posts">
+      <div>
         {
           this.props.posts.map((post) => (
-            <div className="card">
+            <Link key={post.id} to={`/post/${post.id}`} className="post-card">
+            <div key={post.id} className="card">
              <div className="card-body">
                <h4><b>{post.title}</b></h4>
                <p>{post.body}</p>
@@ -32,6 +34,7 @@ class Posts extends React.Component {
                </div>
              </div>
            </div>
+         </Link>
           ))
         }
       </div>

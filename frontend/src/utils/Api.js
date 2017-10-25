@@ -19,6 +19,13 @@ export const fetchPosts = () => {
   return posts
 }
 
+export const fetchPostComments = (postId) => {
+  let comments = axios.get(`${ApiUrl}posts/${postId}/comments`, {
+    ...headers
+  })
+  return comments
+}
+
 export const createPosts = (id, timeStamp, title, body, author, category) => {
   let post = axios.post(`${ApiUrl}posts`, {
     params: {
